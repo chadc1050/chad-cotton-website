@@ -1,6 +1,6 @@
 # Chad Cotton Personal Website
 
-### [Production Website](www.chadpcotton.dev)
+### [Production Website](https://www.chadpcotton.dev)
 
 ## Running the Website
 
