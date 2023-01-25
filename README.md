@@ -1,8 +1,10 @@
 # Chad Cotton Personal Website
 
-## Getting Started
+### [Production Website](https://www.chadpcotton.dev)
 
-First, run the development server:
+## Running the Website
+
+To run the website locally, use npm to run a development environment.
 
 ```bash
 npm run dev
