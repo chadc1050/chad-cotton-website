@@ -2,9 +2,9 @@ import React, {useRef} from "react";
 import * as THREE from 'three';
 import {FontLoader} from "three/examples/jsm/loaders/FontLoader";
 import roboto from '../public/textures/font/Roboto Black_Regular.json'
-import {TextGeometry} from "three/examples/jsm/geometries/TextGeometry";
-import {extend} from "@react-three/fiber";
 import {Mesh} from "three";
+import {extend} from "@react-three/fiber";
+import {TextGeometry} from "three/examples/jsm/geometries/TextGeometry";
 
 extend({TextGeometry, Mesh})
 
