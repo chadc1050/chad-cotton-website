@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/pages/Home.module.css'
 import Earth from "../components/earth";
-import {Canvas, useStore} from "@react-three/fiber";
+import {Canvas} from "@react-three/fiber";
 import Header from "../components/header";
 import {Vector3} from "three";
 import * as THREE from 'three';
