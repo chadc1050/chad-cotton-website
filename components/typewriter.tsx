@@ -6,15 +6,23 @@ const Typewriter = ({text, time, position}: { text: string, time: number, positi
 
     const [currentText, setCurrentText] = useState<string>('')
 
+
     useEffect(() => {
-        let current = ''
-        for (let cursor = 0; cursor < text.length; cursor++) {
-            setTimeout(() => {
-                current += text.at(cursor)
-                setCurrentText(current)
-            }, time)
+        typeWriter()
+    }, [])
+
+    var i = 0;
+    var speed = 100; /* The speed/duration of the effect in milliseconds */
+
+    function typeWriter() {
+        if (i < text.length) {
+            console.log(currentText)
+            const current = currentText
+            setCurrentText(current + text.charAt(i));
+            i++;
+            setTimeout(typeWriter, speed);
         }
-    }, [text, time])
+    }
 
     return (
         <Html

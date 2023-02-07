@@ -40,7 +40,7 @@ const Home = () => {
                     <Header/>
                     <Earth/>
                     {threeContext.banner !== '' ?
-                        <Typewriter text={threeContext.banner} time={100} position={new THREE.Vector3(2.5, -1, 1.5)}/>
+                        <Typewriter text={threeContext.banner} time={50} position={new THREE.Vector3(2.5, -1, 1.5)}/>
                         :
                         <>
                             <Social path={'icons/linkedin.svg'}
