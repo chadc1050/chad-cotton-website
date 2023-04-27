@@ -35,5 +35,5 @@ yarn-error.log*
 next-env.d.ts
 
 # Intellij Idea
-.idea
-.idea/*
+/.idea/
+.idea/workspace.xml
