@@ -7,6 +7,14 @@ on the page. This website is a working-progress, any feedback would be greatly a
 
 ### [Production Website](https://www.chadpcotton.dev)
 
+## Environment Variables
+
+| Name      | Description                                           |
+|-----------|-------------------------------------------------------|
+| CMS_HOST  | The hostname of the headless CMS                      |
+| CMS_TOKEN | The API Token required to access headless CMS content |
+
+
 ## Running the Website
 
 To run the website locally, use npm to run a development environment.

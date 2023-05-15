@@ -35,7 +35,6 @@ const Pin = ({
     })
 
     const onPinClick = () => {
-        console.log(context)
         context.setBanner(text)
     }
 

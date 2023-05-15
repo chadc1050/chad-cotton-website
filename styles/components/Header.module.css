@@ -1,0 +1,30 @@
+.header {
+    margin-top: 4vh;
+    margin-bottom: 5vh;
+}
+
+.header ol {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header li {
+    font-size: 20px;
+}
+
+.header li :hover {
+    font-weight: bold;
+    scale: 1.05;
+    color: var(--accent-color);
+}
+
+.header a {
+    text-decoration: none;
+    font-weight: bolder;
+    color: var(--white);
+}
+
+.header li {
+    display: flex;
+    list-style-type: none;
+}

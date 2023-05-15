@@ -1,0 +1,17 @@
+.blogPanel {
+    color: var(--black);
+    display: flex;
+    background-color: var(--white);
+    border-radius: 15px;
+    padding-bottom: 2em;
+    margin-bottom: 3em;
+}
+
+.blogPanel :hover {
+
+}
+
+.blogPanel h2 {
+    font-size: 2em;
+    color: var(--accent-color);
+}

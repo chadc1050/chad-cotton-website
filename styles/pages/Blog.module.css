@@ -1,0 +1,15 @@
+.blog {
+}
+
+.blog h1 {
+    font-size: 2em;
+}
+
+.blog h2 {
+    font-size: 1.5em;
+}
+
+.blog a {
+    text-decoration: underline;
+    color: cornflowerblue;
+}

@@ -6,8 +6,12 @@ const NotFound = () => {
         document.title = 'You\'re Lost!'
     })
 
-    // TODO: Make a custom error page using 3JS with Astronaut lost in space
-    return <p>Could not find page</p>
+    // TODO: Make a custom error page.
+    return (
+        <>
+            <h1>Could not find page!</h1>
+        </>
+    )
 }
 
 export default NotFound

@@ -1,0 +1,31 @@
+.contactMe section {
+    display: flex;
+    justify-content: center;
+}
+
+.contactMe form {
+    color: var(--black);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px -2px var(--white);
+}
+
+.contactMe h4 {
+    color: var(--accent-color);
+}
+
+.contactMe input {
+    width: 100%;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.contactMe button {
+    width: 40%;
+}
+
+.message {}

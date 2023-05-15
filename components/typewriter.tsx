@@ -1,39 +1,38 @@
-import * as THREE from "three";
-import React, {useEffect, useState} from "react";
-import {Html} from "@react-three/drei";
+import {useThreeContext} from "../context/threeprovider";
+import {useCallback, useEffect, useState} from "react";
+import styles from '../styles/components/Typewriter.module.css'
 
-const Typewriter = ({text, time, position}: { text: string, time: number, position: THREE.Vector3 }) => {
+const Typewriter = () => {
 
-    const [currentText, setCurrentText] = useState<string>('')
+    const [displayedText, setDisplayedText] = useState<string>('');
+    const [currentText, setCurrentText] = useState<string>('');
 
+    const threeContext = useThreeContext();
 
     useEffect(() => {
-        typeWriter()
-    }, [])
+        setDisplayedText(() => '');
+        setCurrentText(() => threeContext.banner);
+    },[threeContext.banner])
 
-    var i = 0;
-    var speed = 100; /* The speed/duration of the effect in milliseconds */
+    useEffect(() => {
+        typewrite();
+    }, [currentText])
 
-    function typeWriter() {
-        if (i < text.length) {
-            console.log(currentText)
-            const current = currentText
-            setCurrentText(current + text.charAt(i));
-            i++;
-            setTimeout(typeWriter, speed);
+    let cursor = 0;
+
+    const typewrite = () => {
+        //TODO: Fix issue when someone clicks really fast on pins
+        if (currentText === threeContext.banner && cursor <= currentText.length) {
+            setDisplayedText((displayedText) => displayedText + currentText.charAt(cursor - 1));
+            cursor++;
+            setTimeout(typewrite, 60);
         }
-    }
+    };
 
     return (
-        <Html
-            position={position}
-            style={{
-                color: "white",
-                display: "block",
-                fontSize: "14px"
-            }}>
-            <h1>{currentText}</h1>
-        </Html>
+        displayedText !== ''
+            ? <p className={styles.typewriter}><em>{displayedText}</em></p>
+            : <></>
     )
 }
 
