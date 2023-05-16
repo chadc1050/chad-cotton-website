@@ -35,8 +35,8 @@ const Hero = () => {
                         <pointLight position={lightPosition}/>
                         <Earth/>
                     </Canvas>
+                    <Typewriter />
                 </figure>
-                <Typewriter />
             </div>
         </section>
     )
