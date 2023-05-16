@@ -1,38 +1,36 @@
 import {useThreeContext} from "../context/threeprovider";
-import {useCallback, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import styles from '../styles/components/Typewriter.module.css'
 
 const Typewriter = () => {
 
     const [displayedText, setDisplayedText] = useState<string>('');
     const [currentText, setCurrentText] = useState<string>('');
+    const [typewriteTimeout, setTypewriteTimeout] = useState<NodeJS.Timeout>();
+
+    const [cursor, setCursor] = useState<number>(0);
 
     const threeContext = useThreeContext();
 
     useEffect(() => {
-        setDisplayedText(() => '');
-        setCurrentText(() => threeContext.banner);
-    },[threeContext.banner])
+        console.log(cursor, displayedText, currentText, threeContext.banner)
+        if (cursor <= currentText.length) {
+            setTypewriteTimeout(setTimeout(() => setDisplayedText((displayedText) => displayedText + currentText.charAt(cursor)), 60));
+            setCursor((cursor) => cursor + 1);
+        }
+    },[currentText, displayedText]);
 
     useEffect(() => {
-        typewrite();
-    }, [currentText])
-
-    let cursor = 0;
-
-    const typewrite = () => {
-        //TODO: Fix issue when someone clicks really fast on pins
-        if (currentText === threeContext.banner && cursor <= currentText.length) {
-            setDisplayedText((displayedText) => displayedText + currentText.charAt(cursor - 1));
-            cursor++;
-            setTimeout(typewrite, 60);
+        if (typewriteTimeout) {
+            clearTimeout(typewriteTimeout)
         }
-    };
+        setDisplayedText('');
+        setCursor(0);
+        setCurrentText(threeContext.banner);
+    }, [threeContext.banner]);
 
     return (
-        displayedText !== ''
-            ? <p className={styles.typewriter}><em>{displayedText}</em></p>
-            : <></>
+        displayedText === '' ? <p><em>&nbsp;</em></p> : <p className={styles.typewriter}><em>{displayedText}</em></p>
     )
 }
 

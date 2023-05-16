@@ -4,11 +4,13 @@
     --accent-color: #9A241C;
     --purple: #35222F;
     --navy-blue: #131619;
+
+    --footer-height: 10em;
 }
 
 section {
-    margin-left: 2.5vw;
-    margin-right: 2.5vw;
+    margin-left: 3.5vw;
+    margin-right: 3.5vw;
 }
 
 body {
@@ -16,6 +18,8 @@ body {
     margin: 0;
     background-color: var(--black);
     color: var(--white);
+    position: relative;
+    min-height: 100vh;
 }
 
 a {
@@ -27,4 +31,8 @@ h1 {
     font-weight: bolder;
     text-align: center;
     font-size: 2.5em;
+}
+
+body {
+    padding-bottom: var(--footer-height);
 }
