@@ -10,6 +10,5 @@
 }
 
 .blog a {
-    text-decoration: underline;
-    color: cornflowerblue;
+    color: var(--link-color);
 }
