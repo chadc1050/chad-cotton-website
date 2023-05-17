@@ -35,6 +35,8 @@ const Earth = () => {
                  text={"I currently live in Oklahoma City, Oklahoma!"}/>
             <Pin color={'green'} position={new THREE.Vector3(0.5, 1.25, 1.45)}
                  rotation={new THREE.Euler(0.9, 0, 0)} text={"I am originally from Leominster, Massachusetts!"}/>
+            <Pin color={'purple'} position={new THREE.Vector3(1, 1.7, 0.3)}
+                 rotation={new THREE.Euler(0, 0, -0.3)} text={"Dream Summer vacation spot!"} />
         </group>
     )
 }
