@@ -1,13 +1,9 @@
 import {graphqlClient} from "../../graphql/graphql-client";
 import parse from 'html-react-parser'
-import {useEffect} from "react";
 import styles from '../../styles/pages/Blog.module.css'
+import {useEffect} from "react";
 
 const Post = ({message}) => {
-
-    useEffect(() => {
-        document.title = message.post.title;
-    })
 
     return (
         <section className={styles.blog}>
@@ -47,11 +43,20 @@ export const getServerSideProps = async (context) => {
             }
         }`;
 
-    return {
-        props: {
-            message: await graphqlClient.request(query, {slug})
+
+    const blog = await graphqlClient.request(query, {slug});
+
+    if (blog.post) {
+        return {
+            props: {
+                message: blog
+            }
+        };
+    } else {
+        return {
+            notFound: true
         }
-    };
+    }
 }
 
 export default Post;

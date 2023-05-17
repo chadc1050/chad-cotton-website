@@ -1,12 +1,7 @@
 import {graphqlClient} from "../../graphql/graphql-client";
-import {useEffect} from "react";
 import BlogPanel from "../../components/blogPanel";
 
 const Blog = ({message}) => {
-
-    useEffect(() => {
-        document.title = 'Blog';
-    })
 
     return (
         <section>

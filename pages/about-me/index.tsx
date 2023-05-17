@@ -1,13 +1,7 @@
-import {useEffect} from "react";
 import Link from "next/link";
 import styles from '../../styles/pages/AboutMe.module.css';
 
 const AboutMe = () => {
-
-    useEffect(() => {
-        // TODO: Remove me, SEO component should handle this.
-        document.title = 'About Me';
-    })
 
     return (
         <>

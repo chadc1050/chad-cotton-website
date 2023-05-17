@@ -1,4 +1,4 @@
-import {FormEvent, useEffect, useState} from "react";
+import {FormEvent, useState} from "react";
 import styles from "../../styles/pages/ContactMe.module.css"
 
 const ContactMe = () => {
@@ -17,11 +17,6 @@ const ContactMe = () => {
     const NAME_REGEX = new RegExp(/^[a-zA-Z ].{1,70}$/);
     const EMAIL_REGEX = new RegExp(/^[A-Za-z0-9_!#$%&'*+\\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/);
     const PHONE_REGEX = new RegExp(/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im);
-
-    useEffect(() => {
-        // TODO: Remove me, SEO component should handle this
-        document.title = 'Contact Me';
-    })
 
     const onNameChange = (newName: string) => {
          if (NAME_REGEX.test(newName)) {
