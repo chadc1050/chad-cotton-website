@@ -89,7 +89,7 @@ const ContactMe = () => {
     return (
         <>
             <h1>Contact Me</h1>
-            <section>
+            <section className={'contentWrap'}>
                 <h2>Piers</h2>
                 <p>
                     I am always open to connect with fellow developers, especially those who reside in the Oklahoma City area. If
