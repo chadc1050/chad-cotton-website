@@ -2,6 +2,7 @@ import {graphqlClient} from "../../graphql/graphql-client";
 import parse from 'html-react-parser'
 import styles from '../../styles/pages/Blog.module.css'
 import {useEffect} from "react";
+import {GetServerSidePropsContext} from "next";
 
 const Post = ({message}) => {
 
@@ -18,9 +19,9 @@ const Post = ({message}) => {
     )
 }
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
 
-    const slug: string = context.params.slug
+    const slug = context.params?.slug;
 
     const query = `
         query getPost($slug:String!) {

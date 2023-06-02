@@ -1,5 +1,6 @@
 import {graphqlClient} from "../../graphql/graphql-client";
 import BlogPanel from "../../components/blogPanel";
+import {GetServerSidePropsContext} from "next";
 
 const Blog = ({message}) => {
 
@@ -14,7 +15,7 @@ const Blog = ({message}) => {
 }
 
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async () => {
 
     const query = `
         query getPosts {

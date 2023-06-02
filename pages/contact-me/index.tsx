@@ -80,10 +80,26 @@ const ContactMe = () => {
         console.log(isNameValid, isEmailValid, isPhoneNumberValid)
 
         if (isNameValid && isEmailValid && isPhoneNumberValid) {
-            console.log("submitted", name, email, phoneNumber, message)
+            fetch("/api/contact-me", {
+                method: "POST",
+                headers: {"content-type": "application/json"},
+                body: JSON.stringify({name: name, email: email, phoneNumber: phoneNumber, message: message})
+            }).then(() => {
+                success();
+            }).catch(() => {
+                error();
+            })
         } else {
             console.log("Invalid submission")
         }
+    }
+
+    const success = () => {
+
+    }
+
+    const error = () => {
+
     }
 
     return (

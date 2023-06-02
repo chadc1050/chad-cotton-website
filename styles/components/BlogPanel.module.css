@@ -1,12 +1,8 @@
 .blogPanel {
     border-bottom: 1px solid var(--white);
-}
-
-.blogPanel section {
-    display: flex;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
     margin-bottom: 3em;
-    justify-items: center;
-    border-bottom: 1px solid var(--white);
 }
 
 .blogPanel img {

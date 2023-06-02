@@ -29,6 +29,10 @@
     outline:0;
 }
 
+.contactMe input :-webkit-autofill {
+    background-color: transparent;
+}
+
 .contactMe input :focus {
     border:2px solid #CC4949;
 }
