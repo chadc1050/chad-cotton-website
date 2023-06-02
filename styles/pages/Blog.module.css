@@ -1,8 +1,14 @@
-.blog {
+.blog img {
+    max-width: 75vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blog h1 {
+    text-align: left;
     font-size: 2em;
+    margin-bottom: 0.5em;
 }
 
 .blog h2 {
@@ -11,4 +17,8 @@
 
 .blog a {
     color: var(--link-color);
+}
+
+.blogContent h1 {
+    font-size: 1.3em;
 }

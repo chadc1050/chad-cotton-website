@@ -6,7 +6,7 @@ const Blog = ({message}) => {
     return (
         <section>
             <h1 className={'sectionHeader'}>Blog</h1>
-            <div>
+            <div className={'contentWrap'}>
                 {message.posts.map((post) => BlogPanel({post}))}
             </div>
         </section>
@@ -25,12 +25,11 @@ export const getServerSideProps = async (context) => {
                 slug
                 subtitle
                 title
-                updatedAt
-                thumbnail {
-                    url
-                }
                 publishedBy {
                     name
+                }
+                authorThumbnail {
+                    url
                 }
             }
         }`;

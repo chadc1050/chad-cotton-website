@@ -6,15 +6,12 @@ import {useEffect} from "react";
 const Post = ({message}) => {
 
     return (
-        <section className={styles.blog}>
+        <section className={`${styles.blog} contentWrap`}>
             <h1>{message.post.title}</h1>
             <h2>{message.post.subtitle}</h2>
-            <h3>{message.post.publishedBy.name}</h3>
-            <div className={"inline"}>
-                <h4>{new Date(message.post.publishedAt).toLocaleString()}</h4>
-                <h4>{new Date(message.post.updatedAt).toLocaleString()}</h4>
-            </div>
-            <div>
+            <p><em>{new Date(message.post.publishedAt).toLocaleString()}</em></p>
+            <img alt={'Post Image'} src={message.post.headerImage?.url ?? ''}/>
+            <div className={styles.blogContent}>
                 {parse(message.post.content.html)}
             </div>
         </section>
@@ -34,6 +31,9 @@ export const getServerSideProps = async (context) => {
                 subtitle
                 title
                 updatedAt
+                headerImage {
+                    url
+                }
                 publishedBy {
                     name
                 }

@@ -1,17 +1,24 @@
 .blogPanel {
-    color: var(--black);
+    border-bottom: 1px solid var(--white);
+}
+
+.blogPanel section {
     display: flex;
-    background-color: var(--white);
-    border-radius: 15px;
-    padding-bottom: 2em;
     margin-bottom: 3em;
+    justify-items: center;
+    border-bottom: 1px solid var(--white);
 }
 
-.blogPanel :hover {
-
+.blogPanel img {
+    max-width: 60px;
+    height: 60px;
+    margin-top: 1em;
+    border-radius: 40px;
+    margin-right: 1em;
 }
 
-.blogPanel h2 {
-    font-size: 2em;
+.blogPanel h2 a {
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
     color: var(--accent-color);
 }

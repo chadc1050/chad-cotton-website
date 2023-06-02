@@ -20,5 +20,6 @@
 }
 
 .footer p {
+    color: var(--accent-color);
     text-align: center;
 }

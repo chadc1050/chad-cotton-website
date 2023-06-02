@@ -3,20 +3,31 @@ import styles from '../styles/components/BlogPanel.module.css';
 
 const BlogPanel = ({post}) => {
     return (
-        <Link key={post.slug} className={styles.blogPanel} href={'/blog/' + post.slug}>
-            <section>
-                <img alt={'Post Thumbnail'} src={post.thumbnail?.url}/>
-                <div>
-                    <h2>{post.title}</h2>
-                    <h3>{post.publishedBy.name}</h3>
-                    <div className={"inline"}>
-                        <h4>Published: {new Date(post.publishedAt).toLocaleString()}</h4>
-                        <h4>Updated: {new Date(post.updatedAt).toLocaleString()}</h4>
-                    </div>
-                    <p>{post.description}</p>
+        <section className={styles.blogPanel}>
+            <h2>
+                <Link href={'/blog/' + post.slug}>{post.title}</Link>
+            </h2>
+            <h3>
+                <Link href={'/blog/' + post.slug}>{post.subtitle}</Link>
+            </h3>
+            <div className={'shake'}>
+                <div className={'inlineFlex'}>
+                    <Link href={'/about-me'}>
+                        <img alt={'Post Thumbnail'} src={post.authorThumbnail?.url}/>
+                    </Link>
+                    <Link href={'/about-me'}>
+                        <p>{post.publishedBy.name}</p>
+                        <p><em>{new Date(post.publishedAt).toLocaleDateString()}</em></p>
+                    </Link>
                 </div>
-            </section>
-        </Link>
+            </div>
+            <div>
+            </div>
+            <p>{post.description}</p>
+            <div className={'fancyLink marginBottom'}>
+                <Link href={'/blog/' + post.slug}>Read More</Link>
+            </div>
+        </section>
     )
 }
 
