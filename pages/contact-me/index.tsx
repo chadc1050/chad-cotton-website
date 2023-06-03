@@ -19,12 +19,12 @@ const ContactMe = () => {
     const PHONE_REGEX = new RegExp(/^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im);
 
     const onNameChange = (newName: string) => {
-         if (NAME_REGEX.test(newName)) {
-             setIsNameValid(true);
-         } else {
-             setIsNameValid(false);
-         }
-         setName(newName);
+        if (NAME_REGEX.test(newName)) {
+            setIsNameValid(true);
+        } else {
+            setIsNameValid(false);
+        }
+        setName(newName);
     }
 
     const onEmailChange = (newEmail: string) => {
@@ -77,8 +77,6 @@ const ContactMe = () => {
     const submit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        console.log(isNameValid, isEmailValid, isPhoneNumberValid)
-
         if (isNameValid && isEmailValid && isPhoneNumberValid) {
             fetch("/api/contact-me", {
                 method: "POST",
@@ -108,42 +106,50 @@ const ContactMe = () => {
             <section className={'contentWrap'}>
                 <h2>Piers</h2>
                 <p>
-                    I am always open to connect with fellow developers, especially those who reside in the Oklahoma City area. If
-                    you are interested in discussing
+                    I am always open to connect with fellow developers, especially those who reside in the Oklahoma City
+                    area. If
+                    you are interested in discussing technology, opportunities or anything really, then fill out the
+                    form below!
                 </p>
                 <h2>Contract Work</h2>
                 <p>
-                    Contract work is something that I am always interested in doing! If you or your company are in need of
-                    a developer then feel free to fill out the form below, or reach out to me on LinkedIn, and I will reach
-                    out to you. Whether you need a website built or a custom serverside solution, I am able to architect and
-                    implement both.
+                    Contract work is something that I am always interested in doing! If you or your company are in need
+                    of
+                    a someone with experience in web development then feel free to fill out the form below, or reach out
+                    to me on LinkedIn, and I will be sure to
+                    get back to you! Whether you need a website built or a custom serverside solution, I am able to
+                    architect and
+                    implement whatever you can dream up.
                 </p>
-            </section>
-            <div className={styles.contactMe}>
-                <section>
-                    <form onSubmit={e => submit(e)}>
-                        <h4>Contact Information</h4>
-                        <label aria-label={'Full Name'}>
-                            <input className={styles.contactMeInput} type={'text'} placeholder={'Full Name'} value={name}
-                                   onChange={e => onNameChange(e.target.value)}/>
-                        </label>
-                        <label aria-label={'Email'}>
-                            <input className={styles.contactMeInput} type={'email'} placeholder={'Email'} value={email}
-                                   onChange={e => onEmailChange(e.target.value)}/>
-                        </label>
-                        <label aria-label={'Phone Number'}>
-                            <input className={styles.contactMeInput} type={'tel'} placeholder={'Phone Number'} value={phoneNumber}
-                                   onChange={e => onPhoneNumberChange(e.target.value)}/>
-                        </label>
-                        <h4>Message</h4>
+                <div className={styles.contactMe}>
+                    <section>
+                        <form onSubmit={e => submit(e)}>
+                            <h4>Contact Information</h4>
+                            <label aria-label={'Full Name'}>
+                                <input className={styles.contactMeInput} type={'text'} placeholder={'Full Name'}
+                                       value={name}
+                                       onChange={e => onNameChange(e.target.value)}/>
+                            </label>
+                            <label aria-label={'Email'}>
+                                <input className={styles.contactMeInput} type={'email'} placeholder={'Email'}
+                                       value={email}
+                                       onChange={e => onEmailChange(e.target.value)}/>
+                            </label>
+                            <label aria-label={'Phone Number'}>
+                                <input className={styles.contactMeInput} type={'tel'} placeholder={'Phone Number'}
+                                       value={phoneNumber}
+                                       onChange={e => onPhoneNumberChange(e.target.value)}/>
+                            </label>
+                            <h4>Message</h4>
                             <label aria-label={'Message'}>
                                 <textarea className={styles.contactMeInput} placeholder={'Message'} value={message}
-                                       onChange={e => setMessage(e.target.value)}/>
+                                          onChange={e => setMessage(e.target.value)}/>
                             </label>
-                        <button type={"submit"}>Submit</button>
-                    </form>
-                </section>
-            </div>
+                            <button type={"submit"}>Submit</button>
+                        </form>
+                    </section>
+                </div>
+            </section>
         </>
     )
 }

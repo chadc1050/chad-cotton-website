@@ -21,13 +21,11 @@ const Hero = () => {
     return (
         <section className={styles.hero}>
             <div>
-                <div>
                     <div>
                         <h1>Chad Cotton</h1>
                         <h2>Software Developer</h2>
                     </div>
                     <Button text={'Who Am I?'} link={'/about-me'}/>
-                </div>
             </div>
             <div>
                 <figure className={styles.earth}>

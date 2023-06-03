@@ -7,7 +7,6 @@ const AboutMe = () => {
         <>
             <h1>About Me</h1>
             <section className={`${styles.aboutMe} contentWrap`}>
-                <h2>Background</h2>
                 <h2>Professional Experience</h2>
                 <h3><Link href={'https://www.hobbylobby.com/'} target={'_blank'}>Hobby Lobby</Link></h3>
                 <h4>Software Developer</h4>

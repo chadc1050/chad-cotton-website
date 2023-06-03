@@ -3,7 +3,7 @@
     bottom: 0;
     width: 100%;
     height: var(--footer-height);
-    margin-bottom: 2em;
+    padding-bottom: 2em;
 }
 
 .footer img {

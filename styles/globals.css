@@ -3,7 +3,6 @@
     --black: #131619;
     --accent-color: #9A241C;
     --purple: #35222F;
-    --navy-blue: #131619;
     --link-color: cornflowerblue;
 
     --footer-height: 10em;
@@ -34,17 +33,31 @@ body {
 }
 
 .contentWrap {
-    margin-left: 3.5vw;
-    margin-right: 3.5vw;
-    margin-bottom: 2em;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 3.5em;
 }
 
 .inlineFlex {
     display: inline-flex;
 }
 
+.verticalInline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .marginBottom {
     margin-bottom: 1em;
+}
+
+.marginAuto {
+    margin: auto;
+}
+
+.textAlignLeft {
+    text-align: left;
 }
 
 /*Fancy Link*/

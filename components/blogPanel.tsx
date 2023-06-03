@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from '../styles/components/BlogPanel.module.css';
+import Author from "./author";
 
 const BlogPanel = ({post}) => {
     return (
@@ -10,17 +11,7 @@ const BlogPanel = ({post}) => {
             <h3>
                 <Link href={'/blog/' + post.slug}>{post.subtitle}</Link>
             </h3>
-            <div className={'shake'}>
-                <div className={'inlineFlex'}>
-                    <Link href={'/about-me'}>
-                        <img alt={'Post Thumbnail'} src={post.authorThumbnail?.url}/>
-                    </Link>
-                    <Link href={'/about-me'}>
-                        <p>{post.publishedBy.name}</p>
-                        <p><em>{new Date(post.publishedAt).toLocaleDateString()}</em></p>
-                    </Link>
-                </div>
-            </div>
+            <Author name={post.publishedBy.name} date={post.publishedAt} imageUrl={post.authorThumbnail?.url}/>
             <div>
             </div>
             <p>{post.description}</p>
