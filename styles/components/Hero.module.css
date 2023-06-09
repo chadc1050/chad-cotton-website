@@ -37,4 +37,8 @@
         text-align: center;
         flex-direction: column-reverse;
     }
+
+    .hero h1 {
+        margin-top: 0.5em;
+    }
 }

@@ -5,3 +5,7 @@
     border-radius: 40px;
     margin-right: 1em;
 }
+
+.author p {
+    line-height: 1.3em;
+}

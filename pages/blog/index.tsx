@@ -8,7 +8,7 @@ const Blog = ({message}) => {
         <section>
             <h1 className={'sectionHeader'}>Blog</h1>
             <div className={'contentWrap'}>
-                {message.posts.map((post) => BlogPanel({post}))}
+                {message.posts.reverse((post) => new Date(post.createdAt)).map((post, idx: number) => BlogPanel({idx, post}))}
             </div>
         </section>
     )
@@ -22,7 +22,7 @@ export const getServerSideProps = async () => {
             posts {
                 slug
                 description
-                publishedAt
+                createdAt
                 slug
                 subtitle
                 title

@@ -1,5 +1,8 @@
 .blog {
     margin-top: 5em;
+    display: grid;
+    grid-template-columns: 700px;
+    justify-content: center;
 }
 
 .blog img {
@@ -21,14 +24,19 @@
 }
 
 .blogHeader {
-    display: grid;
-    grid-template-columns: 700px;
-    justify-content: center;
     margin-bottom: 3em;
+}
+
+.blogContent {
+    max-width: 700px;
 }
 
 .blogContent h1 {
     font-size: 1.3em;
+}
+
+.blogContent a {
+    color: var(--link-color);
 }
 
 @media screen and (max-width: 750px){
@@ -43,6 +51,12 @@
         display: grid;
         grid-template-columns: 80vw;
         justify-content: center;
-        margin-bottom: 3em;
+        margin-bottom: 2em;
+    }
+
+    .blogContent {
+        display: grid;
+        grid-template-columns: 80vw;
+        justify-content: center;
     }
 }

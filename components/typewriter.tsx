@@ -13,7 +13,6 @@ const Typewriter = () => {
     const threeContext = useThreeContext();
 
     useEffect(() => {
-        console.log(cursor, displayedText, currentText, threeContext.banner)
         if (cursor <= currentText.length) {
             setTypewriteTimeout(setTimeout(() => setDisplayedText((displayedText) => displayedText + currentText.charAt(cursor)), 60));
             setCursor((cursor) => cursor + 1);

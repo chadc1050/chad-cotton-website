@@ -10,11 +10,12 @@ any feedback would be greatly appreciated, hope you enjoy, thanks!
 
 ## Environment Variables
 
-| Name      | Description                                           |
-|-----------|-------------------------------------------------------|
-| CMS_HOST  | The hostname of the headless CMS                      |
-| CMS_TOKEN | The API Token required to access headless CMS content |
-
+| Name            | Description                                           |
+|-----------------|-------------------------------------------------------|
+| CMS_HOST        | The Hostname of the Headless CMS                      |
+| CMS_TOKEN       | The API Token required to access headless CMS content |
+| SENDGRID_TOKEN  | SendGrid API Token for Email Notifications            |
+| RECIPIENT_EMAIL | Email address to receive Emil Notifications From      |
 
 ## Running the Website
 

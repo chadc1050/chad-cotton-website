@@ -11,7 +11,7 @@ const SEO = () => {
         let pathComponents = window.location.pathname.split("/");
         let slug = pathComponents.pop();
 
-        if (slug !== '') {
+        if (slug) {
 
             let title = slug.toLowerCase()
                 .split("-")
