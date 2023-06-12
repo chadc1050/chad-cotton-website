@@ -1,0 +1,93 @@
+.homePanel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.homePanel h3 {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+}
+
+.homePanel img {
+    max-width: 500px;
+}
+
+.homePanel a {
+    color: var(--link-color);
+}
+
+.reversed :last-child {
+    order: -1;
+}
+
+.iconRotator {
+    height: 350px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.iconRotator > * {
+    grid-column: 1;
+    grid-row: 1;
+    animation: spinAround 6s linear infinite;
+}
+
+.iconRotator > * > * {
+    animation: reverseSpin 6s linear infinite;
+    width: 75px;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.values > * {
+    width: 100px;
+}
+
+@keyframes spinAround {
+    from {
+        transform: rotate(0deg) translate(150px);
+    }
+    to {
+        transform: rotate(360deg) translate(150px);
+    }
+}
+
+@keyframes reverseSpin {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .homePanel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 5em;
+    }
+
+    .homePanel :last-child {
+        order: -1
+    }
+
+    .homePanel img {
+        max-width: 100%;
+    }
+}

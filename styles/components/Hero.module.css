@@ -1,13 +1,13 @@
 .hero {
-    margin-top: 20vh;
-    padding-bottom: 10vh;
+    margin-top: 25vh;
+    margin-bottom: 25vh;
     display: flex;
     justify-content: space-evenly;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 56px;
     margin-bottom: 0.5em;
     font-weight: bolder;
 }

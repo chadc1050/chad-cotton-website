@@ -17,9 +17,9 @@ const Post = ({message}) => {
                 </div>
                 <img alt={'Post Image'} src={message.post.headerImage?.url ?? ''}/>
             </div>
-            <div className={styles.blogContent}>
+            <article className={styles.blogContent}>
                 {parse(message.post.content.html)}
-            </div>
+            </article>
         </section>
     )
 }

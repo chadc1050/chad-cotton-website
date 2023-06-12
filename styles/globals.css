@@ -2,8 +2,9 @@
     --white: #F0EFEA;
     --black: #131619;
     --accent-color: #9A241C;
-    --purple: #35222F;
+    --light-blue: #8093F1;
     --link-color: cornflowerblue;
+    --purple: #B388EB;
 
     --footer-height: 10em;
 }
@@ -26,6 +27,10 @@ p {
     line-height: 2em;
 }
 
+li {
+    line-height: 2em;
+}
+
 h1 {
     font-weight: bolder;
     text-align: center;
@@ -37,8 +42,8 @@ body {
 }
 
 .contentWrap {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
     margin-bottom: 3.5em;
 }
 
@@ -49,6 +54,12 @@ body {
 .verticalInline {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.verticalInlineReverse {
+    display: flex;
+    flex-direction: column-reverse;
     align-items: center;
 }
 
