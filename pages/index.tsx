@@ -1,61 +1,78 @@
-import Head from 'next/head'
-import styles from '../styles/pages/Home.module.css'
-import Earth from "../components/earth";
-import {Canvas, extend} from "@react-three/fiber";
-import Header from "../components/header";
-import * as THREE from 'three';
-import {useContext, useEffect, useState} from "react";
-import Social from "../components/social";
-import Typewriter from "../components/typewriter";
-import {useThreeContext} from "../context/threeprovider";
+import Hero from "../components/hero";
+import styles from '../styles/pages/Home.module.css';
+import Link from "next/link";
 
 const Home = () => {
 
-    const threeContext = useThreeContext();
-
-    const [camera, setCamera] = useState<THREE.Camera>(new THREE.Camera);
-
-    const lightPosition: THREE.Vector3 = new THREE.Vector3(12, 1, 3)
-
-    useEffect(() => {
-        const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000)
-        camera.position.set(8, 2, 0)
-        setCamera(camera)
-    }, [])
-
     return (
         <>
-            <Head>
-                <title>Chad Cotton</title>
-                <meta name="description"
-                      content="Hello! I am Chad Cotton, a Software Developer from Oklahoma City, Oklahoma!"/>
-                <meta name="author" content="Chad Cotton"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <meta charSet="utf-8"/>
-                <link rel="icon" href="icons/icon.ico" type="image/x-icon"/>
-            </Head>
-            <main className={styles.main}>
-                <Canvas shadows={true} camera={{position: camera.position}}>
-                    <pointLight position={lightPosition}/>
-                    <Header/>
-                    <Earth/>
-                    {threeContext.banner !== '' ?
-                        <Typewriter text={threeContext.banner} time={50} position={new THREE.Vector3(2.5, -1, 1.5)}/>
-                        :
-                        <>
-                            <Social path={'icons/linkedin.svg'}
-                                    link={'https://www.linkedin.com/in/chad-cotton-1b1896197/'}
-                                    position={new THREE.Vector3(6, 3, 0)} rotation={new THREE.Vector3(1, 1, 1)}/>
-                            <Social path={'icons/youtube.svg'}
-                                    link={'https://www.youtube.com/channel/UCwD-1ZWGinHVb6xN1k6j5bw'}
-                                    position={new THREE.Vector3(6, 3, 0)} rotation={new THREE.Vector3(1, 1, 1)}/>
-                            <Social path={'icons/github.svg'}
-                                    link={'https://github.com/chadc1050'}
-                                    position={new THREE.Vector3(6, 3, 0)} rotation={new THREE.Vector3(1, 1, 1)}/>
-                        </>
-                    }
-                </Canvas>
-            </main>
+            <Hero/>
+            <div className={'contentWrap'}>
+                <section className={`${styles.homePanel} ${styles.reversed}`}>
+                    <div>
+                        <h3>Enterprise Applications Developer</h3>
+                        <p>
+                            I have been programming for the better part of a decade, and have worked on developing scalable,
+                            maintainable software for enterprise over the past two years. To learn more about my experiences, check
+                            out my <Link href={'/about-me'}>professional history</Link>!
+                        </p>
+                    </div>
+                    <figure>
+                        <img alt={'Enterprise Software Picture'} src={'../enterprise-software.png'}/>
+                    </figure>
+                </section>
+                <section className={styles.homePanel}>
+                    <div>
+                        <h3>Language and Framework Knowledge</h3>
+                        <p>
+                            Over the years, I have been able to consume a wide depth and breadth of language and framework
+                            knowledge in the realms of Java, Go, Python, Javascript and Rust!
+                        </p>
+                    </div>
+                    <figure>
+                        <div className={styles.iconRotator}>
+                            <div style={{animationDelay: "-1s"}} >
+                                <img style={{animationDelay: "-1s"}} alt={'Go Language'} src={'../icons/golang.svg'}/>
+                            </div>
+                            <div style={{animationDelay: "-2s"}}>
+                                <img style={{animationDelay: "-2s"}} alt={'Rust Language'} src={'../icons/rust.svg'}/>
+                            </div>
+                            <div style={{animationDelay: "-3s"}}>
+                                <img style={{animationDelay: "-3s"}} alt={'Javascript Language'} src={'../icons/js.svg'}/>
+                            </div>
+                            <div style={{animationDelay: "-4s"}}>
+                                <img style={{animationDelay: "-4s"}} alt={'Typescript Language'} src={'../icons/ts.svg'}/>
+                            </div>
+                            <div style={{animationDelay: "-5s"}}>
+                                <img style={{animationDelay: "-5s"}} alt={'Java Language'} src={'../icons/java.svg'}/>
+                            </div>
+                            <div style={{animationDelay: "-6s"}}>
+                                <img style={{animationDelay: "-6s"}} alt={'Python Language'} src={'../icons/python.svg'}/>
+                            </div>
+                        </div>
+                    </figure>
+                </section>
+                <section className={`${styles.homePanel} ${styles.reversed}`}>
+                    <div>
+                        <h3>Technical Values</h3>
+                        <p>
+                            In my experience, the core tenants to a great application are its ability to
+                            be <em>performant</em>, <em>secure</em> and <em>maintainable</em>. When culminated and
+                            technically expressed within an application, it leads to both an excellent user and developer
+                            experience, while ensuring that the user can confidently engage with it without the fear of
+                            exposing sensitive data. That is why I always ensure that when I deploy code,
+                            it thoroughly expresses these core technical values.
+                        </p>
+                    </div>
+                    <figure>
+                        <div className={styles.values}>
+                            <img alt={'Maintenance'} src={'../web-maintenance.png'} />
+                            <img alt={'Rocket'} src={'../rocket.png'}/>
+                            <img alt={'Security'} src={'../security.png'} />
+                        </div>
+                    </figure>
+                </section>
+            </div>
         </>
     )
 }

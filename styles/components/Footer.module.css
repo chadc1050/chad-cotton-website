@@ -1,0 +1,25 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+    padding-bottom: 2em;
+}
+
+.footer img {
+    width: 2em;
+}
+
+.footer ol {
+    margin: 30px auto;
+    max-width: 450px;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer p {
+    color: var(--accent-color);
+    text-align: center;
+}

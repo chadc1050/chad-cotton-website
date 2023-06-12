@@ -22,21 +22,22 @@ const Earth = () => {
     })
 
     return (
-        <>
-            <group ref={earthRef}>
-                <mesh
-                    receiveShadow={true}
-                    castShadow={true}
-                    onPointerOver={() => setHover(true)}
-                    onPointerOut={() => setHover(false)}>
-                    <sphereGeometry args={[radius]}/>
-                    <meshPhongMaterial map={earthTexture}/>
-                </mesh>
-                <Pin color={'red'} position={new THREE.Vector3(-0.3, 1, 1.7)} rotation={new THREE.Euler(1, 0, 0)} text={"I currently live in Oklahoma City, Oklahoma..."}/>
-                <Pin color={'green'} position={new THREE.Vector3(0.5, 1.25, 1.45)}
-                     rotation={new THREE.Euler(0.9, 0, 0)} text={"I am originally from Leominster, Massachusetts..."}/>
-            </group>
-        </>
+        <group ref={earthRef}>
+            <mesh
+                receiveShadow={true}
+                castShadow={true}
+                onPointerOver={() => setHover(true)}
+                onPointerOut={() => setHover(false)}>
+                <sphereGeometry args={[radius]}/>
+                <meshPhongMaterial map={earthTexture}/>
+            </mesh>
+            <Pin color={'red'} position={new THREE.Vector3(-0.3, 1, 1.7)} rotation={new THREE.Euler(1, 0, 0)}
+                 text={"I currently live in Oklahoma City, Oklahoma!"}/>
+            <Pin color={'green'} position={new THREE.Vector3(0.5, 1.25, 1.45)}
+                 rotation={new THREE.Euler(0.9, 0, 0)} text={"I am originally from Leominster, Massachusetts!"}/>
+            <Pin color={'purple'} position={new THREE.Vector3(1, 1.7, 0.3)}
+                 rotation={new THREE.Euler(0, 0, -0.3)} text={"Dream Summer vacation spot!"} />
+        </group>
     )
 }
 

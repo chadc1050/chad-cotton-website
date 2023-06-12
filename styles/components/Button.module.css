@@ -1,0 +1,17 @@
+.button div{
+    color: var(--white);
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+.button {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.button :hover {
+    scale: 1.05;
+}

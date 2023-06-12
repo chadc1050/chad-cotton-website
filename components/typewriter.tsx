@@ -1,39 +1,35 @@
-import * as THREE from "three";
-import React, {useEffect, useState} from "react";
-import {Html} from "@react-three/drei";
+import {useThreeContext} from "../context/threeprovider";
+import {useEffect, useState} from "react";
+import styles from '../styles/components/Typewriter.module.css'
 
-const Typewriter = ({text, time, position}: { text: string, time: number, position: THREE.Vector3 }) => {
+const Typewriter = () => {
 
-    const [currentText, setCurrentText] = useState<string>('')
+    const [displayedText, setDisplayedText] = useState<string>('');
+    const [currentText, setCurrentText] = useState<string>('');
+    const [typewriteTimeout, setTypewriteTimeout] = useState<NodeJS.Timeout>();
 
+    const [cursor, setCursor] = useState<number>(0);
+
+    const threeContext = useThreeContext();
 
     useEffect(() => {
-        typeWriter()
-    }, [])
-
-    var i = 0;
-    var speed = 100; /* The speed/duration of the effect in milliseconds */
-
-    function typeWriter() {
-        if (i < text.length) {
-            console.log(currentText)
-            const current = currentText
-            setCurrentText(current + text.charAt(i));
-            i++;
-            setTimeout(typeWriter, speed);
+        if (cursor <= currentText.length) {
+            setTypewriteTimeout(setTimeout(() => setDisplayedText((displayedText) => displayedText + currentText.charAt(cursor)), 60));
+            setCursor((cursor) => cursor + 1);
         }
-    }
+    },[currentText, displayedText]);
+
+    useEffect(() => {
+        if (typewriteTimeout) {
+            clearTimeout(typewriteTimeout)
+        }
+        setDisplayedText('');
+        setCursor(0);
+        setCurrentText(threeContext.banner);
+    }, [threeContext.banner]);
 
     return (
-        <Html
-            position={position}
-            style={{
-                color: "white",
-                display: "block",
-                fontSize: "14px"
-            }}>
-            <h1>{currentText}</h1>
-        </Html>
+        displayedText === '' ? <p><em>&nbsp;</em></p> : <p className={styles.typewriter}><em>{displayedText}</em></p>
     )
 }
 
