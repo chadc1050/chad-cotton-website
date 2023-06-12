@@ -1,11 +1,117 @@
 :root {
-    --background-color: #070707;
-    --accent-color: #EB655C;
-    --white: white
+    --white: #F0EFEA;
+    --black: #131619;
+    --accent-color: #9A241C;
+    --light-blue: #8093F1;
+    --link-color: cornflowerblue;
+    --purple: #B388EB;
+
+    --footer-height: 10em;
 }
 
 body {
+    font-family: Segoe UI, Frutiger, Dejavu Sans, Helvetica Neue, Arial, sans-serif;
     margin: 0;
-    background-color: var(--background-color);
+    background-color: var(--black);
     color: var(--white);
+    position: relative;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+p {
+    line-height: 2em;
+}
+
+li {
+    line-height: 2em;
+}
+
+h1 {
+    font-weight: bolder;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+body {
+    padding-bottom: var(--footer-height);
+}
+
+.contentWrap {
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+    margin-bottom: 3.5em;
+}
+
+.inlineFlex {
+    display: inline-flex;
+}
+
+.verticalInline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verticalInlineReverse {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.marginBottom {
+    margin-bottom: 1em;
+}
+
+.marginAuto {
+    margin: auto;
+}
+
+.textAlignLeft {
+    text-align: left;
+}
+
+/*Fancy Link*/
+.fancyLink a {
+    color: var(--accent-color);
+    position: relative;
+    text-decoration: none;
+}
+
+.fancyLink a::before {
+    color: var(--white);
+    background: var(--accent-color);
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.fancyLink a:hover {
+    color: var(--white);
+}
+
+.fancyLink a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/*Shake*/
+.shake div:hover {
+    animation: horizontal-shaking 1s infinite;
+}
+
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
 }

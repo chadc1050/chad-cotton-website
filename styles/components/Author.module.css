@@ -1,0 +1,11 @@
+.author img {
+    max-width: 60px;
+    height: 60px;
+    margin-top: 1em;
+    border-radius: 40px;
+    margin-right: 1em;
+}
+
+.author p {
+    line-height: 1.3em;
+}
