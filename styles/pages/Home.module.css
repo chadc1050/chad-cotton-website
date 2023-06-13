@@ -15,6 +15,14 @@
 
 .homePanel img {
     max-width: 500px;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+}
+
+.homePanel figure {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .homePanel a {
@@ -40,7 +48,9 @@
 
 .iconRotator > * > * {
     animation: reverseSpin 6s linear infinite;
-    width: 75px;
+    min-width: 75px;
+    width: auto;
+    height: auto;
 }
 
 .values {
@@ -51,16 +61,12 @@
     justify-items: center;
 }
 
-.values > * {
-    width: 100px;
-}
-
 @keyframes spinAround {
     from {
-        transform: rotate(0deg) translate(150px);
+        transform: rotate(0deg) translate(140px);
     }
     to {
-        transform: rotate(360deg) translate(150px);
+        transform: rotate(360deg) translate(140px);
     }
 }
 
@@ -89,5 +95,10 @@
 
     .homePanel img {
         max-width: 100%;
+    }
+
+    .values > * {
+        width: 50px;
+        height: 50px;
     }
 }

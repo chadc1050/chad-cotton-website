@@ -3,6 +3,7 @@ import parse from 'html-react-parser'
 import styles from '../../styles/pages/Blog.module.css'
 import {GetServerSidePropsContext} from "next";
 import Author from "../../components/author";
+import Image from "next/image";
 
 const Post = ({message}) => {
 
@@ -15,7 +16,7 @@ const Post = ({message}) => {
                     <Author name={message.post.publishedBy.name} date={message.post.createdAt}
                             imageUrl={message.post.authorThumbnail?.url}/>
                 </div>
-                <img alt={'Post Image'} src={message.post.headerImage?.url ?? ''}/>
+                <Image width={720} height={540} alt={'Post Image'} src={message.post.headerImage?.url ?? ''}/>
             </div>
             <article className={styles.blogContent}>
                 {parse(message.post.content.html)}
