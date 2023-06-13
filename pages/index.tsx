@@ -1,6 +1,14 @@
 import Hero from "../components/hero";
 import styles from '../styles/pages/Home.module.css';
 import Link from "next/link";
+import Image from "next/image";
+
+import rust from "../public/icons/rust.svg";
+import java from "../public/icons/java.svg";
+import js from "../public/icons/js.svg";
+import ts from "../public/icons/ts.svg";
+import go from "../public/icons/golang.svg";
+import python from "../public/icons/python.svg";
 
 const Home = () => {
 
@@ -20,7 +28,8 @@ const Home = () => {
                         </p>
                     </div>
                     <figure>
-                        <img alt={'Enterprise Software Picture'} src={'../enterprise-software.png'}/>
+                        <Image width={640} height={410} alt={'Enterprise Software Picture'}
+                               src={'/enterprise-software.png'}/>
                     </figure>
                 </section>
                 <section className={styles.homePanel}>
@@ -35,25 +44,34 @@ const Home = () => {
                     <figure>
                         <div className={styles.iconRotator}>
                             <div style={{animationDelay: "-1s"}}>
-                                <img style={{animationDelay: "-1s"}} alt={'Go Language'} src={'../icons/golang.svg'}/>
+                                <Image width={75} height={75} style={{animationDelay: "-1s"}}
+                                       alt={'Go Language'}
+                                       src={go}/>
                             </div>
                             <div style={{animationDelay: "-2s"}}>
-                                <img style={{animationDelay: "-2s"}} alt={'Rust Language'} src={'../icons/rust.svg'}/>
+                                <Image width={75} height={75} style={{animationDelay: "-2s"}}
+                                       alt={'Rust Language'}
+                                       src={rust}/>
                             </div>
                             <div style={{animationDelay: "-3s"}}>
-                                <img style={{animationDelay: "-3s"}} alt={'Javascript Language'}
-                                     src={'../icons/js.svg'}/>
+                                <Image width={75} height={75} style={{animationDelay: "-3s"}}
+                                       alt={'Javascript Language'}
+                                       src={js}/>
                             </div>
                             <div style={{animationDelay: "-4s"}}>
-                                <img style={{animationDelay: "-4s"}} alt={'Typescript Language'}
-                                     src={'../icons/ts.svg'}/>
+                                <Image width={75} height={75} style={{animationDelay: "-4s"}}
+                                       alt={'Typescript Language'}
+                                       src={ts}/>
                             </div>
                             <div style={{animationDelay: "-5s"}}>
-                                <img style={{animationDelay: "-5s"}} alt={'Java Language'} src={'../icons/java.svg'}/>
+                                <Image width={75} height={75} style={{animationDelay: "-5s"}}
+                                       alt={'Java Language'}
+                                       src={java}/>
                             </div>
                             <div style={{animationDelay: "-6s"}}>
-                                <img style={{animationDelay: "-6s"}} alt={'Python Language'}
-                                     src={'../icons/python.svg'}/>
+                                <Image width={75} height={75} style={{animationDelay: "-6s"}}
+                                       alt={'Python Language'}
+                                       src={python}/>
                             </div>
                         </div>
                     </figure>
@@ -73,9 +91,9 @@ const Home = () => {
                     </div>
                     <figure>
                         <div className={styles.values}>
-                            <img alt={'Maintenance'} src={'../web-maintenance.png'}/>
-                            <img alt={'Rocket'} src={'../rocket.png'}/>
-                            <img alt={'Security'} src={'../security.png'}/>
+                            <Image width={100} height={100} alt={'Maintenance'} src={'/web-maintenance.png'}/>
+                            <Image width={100} height={100} alt={'Rocket'} src={'/rocket.png'}/>
+                            <Image width={100} height={100} alt={'Security'} src={'/security.png'}/>
                         </div>
                     </figure>
                 </section>
