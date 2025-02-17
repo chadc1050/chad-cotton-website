@@ -39,13 +39,8 @@ const Footer = () => {
                         <Image width={40} height={40} src={'../icons/github.svg'} alt={"LinkedIn"}/>
                     </Link>
                 </li>
-                <li>
-                    <Link href={'https://www.youtube.com/@chadcotton5843'} target={'_blank'}>
-                        <Image width={40} height={40} src={'/icons/youtube.svg'} alt={"LinkedIn"}/>
-                    </Link>
-                </li>
             </ol>
-            <p>&copy; 2023 Chad Cotton</p>
+            <p>&copy; 2023-2025 Chad Cotton</p>
         </footer>
     )
 }
