@@ -8,9 +8,30 @@ const AboutMe = () => {
             <h1>About Me</h1>
             <section className={`${styles.aboutMe} contentWrap`}>
                 <h2>Professional Experience</h2>
+                <h3><Link href={'https://americanfidelity.com/'} target={'_blank'}>American Fidelity Assurance</Link></h3>
+                <h4>Software Engineer</h4>
+                <p><em>November 2023 - Present</em></p>
+                <p>
+                    Responsible for architecting, maintaining and implementing new features for the firm’s Annuity system.
+                </p>
+                <ul>
+                    <li>
+                        Decompiled, refactored and upgraded several legacy middleware applications to run on <Link href={'https://dotnet.microsoft.com/en-us/apps/aspnet'} target={'_blank'}>.Net Core</Link> that
+                        did not previously have saved source code.
+                    </li>
+                    <li>
+                        Upgraded legacy <Link href={'https://www.progress.com/openedge/features/abl'} target={'_blank'}>Advanced Business Language (ABL)</Link> application
+                        to 64-bit with more modern system design conventions, revitalizing maintainability while in the process
+                        of doing so.
+                    </li>
+                    <li>
+                        Reworked large scale data extract process so that it’s time was reduced from a previously estimated
+                        benchmark of 70 days from the prior year, down to hours. Awarded innovator of the quarter for this accomplishment.
+                    </li>
+                </ul>
                 <h3><Link href={'https://www.hobbylobby.com/'} target={'_blank'}>Hobby Lobby</Link></h3>
                 <h4>Software Developer</h4>
-                <p><em>September 2022 - Present</em></p>
+                <p><em>September 2022 - November 2023</em></p>
                 <p>
                     Member of team responsible for architecting and integrating microservices into the company&apos;s
                     ECommerce ecosystem.

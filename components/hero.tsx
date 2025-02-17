@@ -23,7 +23,7 @@ const Hero = () => {
             <div>
                     <div>
                         <h1>Chad Cotton</h1>
-                        <h2>Software Developer</h2>
+                        <h2>Software Engineer</h2>
                     </div>
                     <Button text={'Who Am I?'} link={'/about-me'}/>
             </div>
